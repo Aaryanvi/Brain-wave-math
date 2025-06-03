@@ -1,1 +1,90 @@
-<p>hello!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Brain Wave Math</title>
+    <link rel="stylesheet" href="micro.css">
+</head>
+<style>
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.text {
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+</style>
+<body>
+<div class="container">
+<div class="image">
+<img src="micro.png" height="150">  
+</div> 
+<div class="text">
+<marquee  behavior="slide" direction="left" ><h1  style ="color:rgb(222, 17, 51)"> <u><i>BRAIN WAVE MATH</u></i></h1> </marquee>
+</div>
+</div>
+
+<marquee behavior="slide" direction="up" ><h2> "Calculating success,One Problem at a Time!!</h2></marquee>
+<pre>
+    <button onclick="redirect();"> AP Series</button>        <button onclick="redirectCircle();" >Cordinate geometry(Circle)</button>   <button onclick="redirectLine();" > Cordinate geometry(Straight line)</button>   <button onclick="Redirect() ;">Trignometric Ratios</button> 
+
+                
+                                                     <button onclick="redirectGp();">GP Series</button>         <button onclick="redirectHP();">HP Series</button>
+
+
+    <button onclick="redirectHeron() ;"> Heron's Formula</button>         <button onclick="redirectstat();">    Mean,Median,Mode</button>            <button onclick="redirectQuadratic();"> Quadratic equations</button>       <button onclick="redirectLineareqn();"> Linear eqn's in two variable</button>
+
+</pre>
+
+</br>
+<pre>
+ <h2 id="second"><b><i> "THE ONLY MATHS PROBLEM SOLVER YOU NEED"</i></b></h2>
+
+<marquee behavior="slide" direction="left"><h3 id="third"> Get your answer instantly !!</h3></marquee>         
+</pre>
+<button onclick="redirectBasic();" class="arrow-button">For basic problems click here</button>
+</body>
+<script>
+    function redirect(){
+        window.location.href='indexAP.html';
+    }
+    function Redirect(){
+           window.location.href='indexTrigo.html';
+    }
+    function redirectHeron(){
+        window.location.href='indexHeron.html';
+    }
+    function redirectCircle(){
+        window.location.href='indexCircle.html';
+    }
+    function redirectLine(){
+        window.location.href='indexLine.html';
+    }
+    function redirectstat(){
+        window.location.href='indexStat.html';
+    }
+    function redirectBasic(){
+        window.location.href='indexBasic.html';
+    }
+    function redirectQuadratic(){
+        window.location.href='indexQuadratic.html';
+    }
+    function redirectLineareqn(){
+        window.location.href='indexLinear.html';
+    }
+    function redirectGp(){
+        window.location.href='indexGp.html';
+    }
+    function redirectHP(){
+        window.location.href='indexHp.html';
+    }
+</script>
+</html>

@@ -1,0 +1,150 @@
+button{
+    background-color: aqua;
+    padding:15px,32px;
+    font-size: larger;
+    
+}
+
+label{
+    background-color: coral;
+    font-size: 20px;
+}
+body{
+    background-color: cornsilk;
+}
+#Ap{
+    text-align: center;
+}
+#Result{
+    font-size:xx-large;
+    font-weight: bolder;
+    
+}
+#result{
+    font-size:xx-large;
+    font-weight: bolder;
+}
+
+#Trigno{
+    text-align:center
+}
+#trigo{
+    padding:15px,32px;
+    font-size: larger;
+}
+#heron{
+    text-align: center;
+}
+#Herons{
+    padding:15px,32px;
+    font-size: larger;
+}
+
+#section{
+    float:right;
+    
+}
+#line, #section,#AP,#gp,#hp,#circle,#Circle{
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: aquamarine;
+  }
+
+  
+  #mean,#median,#mode{
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: aquamarine;
+    height:350px;
+    
+  }
+  #mode{
+    margin-left: 25%;
+    width:45%;
+  }
+  #lcm,#hcf, #circle,#rectangle,#square,#cuboid,#cube,#cone,#cylinder,#sphere,#quadratic{
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: aquamarine;
+    width:45%;
+    height:500px ;
+  }
+  #lcm,#hcf,#rectangle,#circle,#square{
+    height: 310px;
+  }
+  
+  #hcf,#rectangle,#cuboid,#sphere,#cylinder{
+    float:right;
+    
+  }
+  #cube{
+    height:400px;
+    font-weight: bold;
+    font-size: larger;
+  }
+  #sphere,#cone,#cylinder,#hcf{
+    font-weight: bold;
+    font-size: larger;
+  }
+  #rectangle,#sphere{
+    height: 350px;
+    
+  }
+  #quadratic{
+    margin-left: 25%;
+    text-align: center;
+  }
+  #lineareqn,#centroid,#Trigno,#heron{
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: aquamarine;
+  
+    margin-left: 25%;
+  }
+  #centroid{
+    margin-left: 30%;
+    width:30%
+  }
+  #circle{
+    text-align: center;
+    height:400px;
+    
+  }
+  #AP,#Circle{
+    margin-left: 25%;
+    font-size: large;
+  }
+  #Trigno,#heron{
+    margin-left: 35%;
+    text-align: center;
+  }
+  #gp,#hp{
+    font-size: large;
+    font-weight: bold;
+    margin-left: 30%;
+  }
+  
+  
+  
+  
+ 

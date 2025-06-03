@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN WAVE MATH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="Circle">
+    <pre>
+      <label for="g">  Enter value of g:</label>
+      <input type="number" id="g" name="g"><br><br>
+
+
+      <label for="f">Enter value of f:</label>
+      <input type="number" id="f" name="f"><br><br>
+
+
+     <label for="c">Enter value of c:</label>
+     <input type="number" id="c" name="c"><br><br>
+
+     <button onclick="findRadius()">Find Radius</button>
+      
+       <p id="result"></p>
+       </pre>
+       </div>
+
+    <script>
+      function findRadius() {
+        var g = parseFloat(document.getElementById("g").value);
+        var f = parseFloat(document.getElementById("f").value);
+        var c = parseFloat(document.getElementById("c").value);
+
+        var radius = Math.sqrt(g*g + f*f - c).toFixed(4);
+        document.getElementById("result").innerHTML = "The radius of the circle is: " + radius;
+      }
+    </script>
+    <div id="conic">
+      <pre>
+        
+      </pre>
+    </div>
+</body>
+</html>

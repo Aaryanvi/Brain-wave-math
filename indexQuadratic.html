@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN WAVE MATH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="quadratic">
+<pre>
+<h1>Quadratic Equation Solver</h1>
+    <label for="a">a:coefficient of x^2</label>
+    <input type="number" id="a" name="a"><br><br>
+
+    <label for="b">b:coefficient of x</label>
+    <input type="number" id="b" name="b"><br><br>
+
+    <label for="c">c:constant term</label>
+    <input type="number" id="c" name="c"><br><br>
+
+    <button id="solve-btn">Solve</button>
+    <p id="result"></p>
+    <script>
+        // Get the input fields and button
+        const aInput = document.getElementById('a');
+        const bInput = document.getElementById('b');
+        const cInput = document.getElementById('c');
+        const solveBtn = document.getElementById('solve-btn');
+        const resultPara = document.getElementById('result');
+    
+        // Add event listener to the button
+        solveBtn.addEventListener('click', solveQuadratic);
+    
+        // Function to solve the quadratic equation
+        function solveQuadratic() {
+          // Get the input values
+          const a = parseFloat(aInput.value);
+          const b = parseFloat(bInput.value);
+          const c = parseFloat(cInput.value);
+    
+          // Calculate the discriminant
+          const discriminant = b * b - 4 * a * c;
+    
+          // Check if the discriminant is positive, negative or zero
+          if (discriminant > 0) {
+            // Two distinct real roots
+            const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            resultPara.textContent = `The roots are ${root1} and ${root2}`;
+          } else if (discriminant === 0) {
+            // One repeated real root
+            const root = -b / (2 * a);
+            resultPara.textContent = `The root is ${root}`;
+          } else {
+            // No real roots
+            resultPara.textContent = 'No real roots';
+          }
+        }
+      </script>
+</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN WAVE MATH</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="gp">
+        <pre>
+      <h1> GP Calculator</h1>
+      <label for="firstTerm">First Term:</label>
+      <input type="number" id="firstTerm" value="1"><br>
+      
+      <label for="commonRatio">Common Ratio:</label>
+      <input type="number" id="commonRatio" value="2"><br>
+      
+      <label for="numTerms">Number of terms:</label>
+      <input type="number" id="numTerms" value="5"><br>
+      
+      <button onclick="calculateGPTerms()">Calculate GP Terms</button>
+      <div id="GPResult"></div>
+      
+      <button onclick="calculateGP()">Calculate GP Sum</button>
+      <p id="gpresult"></p>
+        </pre>
+        </div>
+        <script>
+         function calculateGPTerms(){
+        let a = parseInt(document.getElementById("firstTerm").value);
+        let r = parseInt(document.getElementById("commonRatio").value);
+        let n = parseInt(document.getElementById("numTerms").value);
+        let GPResultDiv = document.getElementById("GPResult");
+        GPResultDiv.innerHTML = "";
+        let series = "";
+        for(let i = 0; i < n; i++){
+          let term = a * Math.pow(r, i);
+          series += term + ",";
+        }
+        GPResultDiv.innerHTML = "Geometric Progression: " + series;
+      }
+      
+      function calculateGP(){
+        let firstTerm = parseInt(document.getElementById("firstTerm").value);
+        let commonRatio = parseInt(document.getElementById("commonRatio").value);
+        let numTerms = parseInt(document.getElementById("numTerms").value);
+        if (isNaN(firstTerm) || isNaN(commonRatio) || isNaN(numTerms)) {
+          document.getElementById("gpresult").textContent = "Please enter valid numbers";
+          return;
+        }
+        if (numTerms <= 0) {
+          document.getElementById("gpresult").textContent = "Please enter a positive number of terms";
+          return;
+        }
+        if (commonRatio === 1) {
+          let sum = firstTerm * numTerms;
+          document.getElementById("gpresult").textContent = "The sum of GP Series: " + sum;
+        } else {
+          let sum = firstTerm * (Math.pow(commonRatio, numTerms) - 1) / (commonRatio - 1);
+          document.getElementById("gpresult").textContent = "The sum of GP Series: " + sum;
+        }
+      }
+      
+        </script>
+      
+</body>
+</html>

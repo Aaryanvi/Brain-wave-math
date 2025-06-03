@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN WAVE MATH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div id="Trigno">
+<body>
+    <pre>
+    <label for="angleInput"> Enter angle in degrees:</label>
+    <input type="number" id="angleInput" placeholder="Angle">
+
+
+    <button id="trigo" onclick="calculateRatios()"> Calculate </button>
+    <p id="result"></p>
+    <script>
+        function calculateRatios(){
+            let angle=document.getElementById("angleInput").value;
+            angle=(angle*Math.PI)/180;
+            let sinValue=Math.sin(angle).toFixed(4);
+            let cosValue=Math.cos(angle).toFixed(4);
+            let tanValue=Math.tan(angle).toFixed(4);
+            let cosecValue=(1/Math.sin(angle)).toFixed(4);
+            let secValue=(1/Math.cos(angle)).toFixed(4);
+            let cotValue=(1/Math.tan(angle)).toFixed(4);
+            document.getElementById("result").innerHTML = `
+                Sine:${sinValue}<br>
+                Cosine: ${cosValue}<br>
+                Tangent: ${tanValue}<br>
+                cosecant:${cosecValue}<br>
+                secant:${secValue}<br>
+                cotangent:${cotValue}
+            `;
+        }
+        // Sign convention
+        if (angle > 0 && angle < 90) {
+          result += "Sign convention: All ratios are positive.";
+        } else if (angle > 90 && angle < 180) {
+          result += "Sign convention: Sine is positive, Cosine and Tangent are negative.";
+        } else if (angle > 180 && angle < 270) {
+          result += "Sign convention: Tangent is positive, Sine and Cosine are negative.";
+        } else if (angle > 270 && angle < 360) {
+          result += "Sign convention: Cosine is positive, Sine and Tangent are negative.";
+        }
+        
+    </script>
+    </pre>
+</div>
+
+    
+</body>
+</html>

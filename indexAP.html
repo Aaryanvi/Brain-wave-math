@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN WAVE MATH</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="AP">
+   <pre>
+    <h1> AP Calculator</h1>
+    <label for="firstTerm">First Term:</label>
+    <input type="number" id="firstTerm" value="1"><br>
+
+
+    <label for="commonDiff"> Common Difference:</label>
+    <input type="number" id="commonDiff" value="2"><br>
+
+
+    <label for="numTerms">Number of terms:</label>
+    <input type="number" id="numTerms" value="5"><br>
+
+
+    <button onclick="calculateAPTerms()">calculate AP Terms</button>
+    <div id="Result"></div>
+
+
+    <button onclick="calculateAP()">Calculate AP Sum</button>
+    <p id="result"></p>
+   </pre>
+   </div>
+
+  
+  <script>
+    function calculateAPTerms(){
+         let a=parseInt(document.getElementById("firstTerm").value);
+         let d=parseInt(document.getElementById("commonDiff").value);
+         let n=parseInt(document.getElementById("numTerms").value);
+         let ResultDiv=document.getElementById("Result");
+         ResultDiv.innerHTML="";
+
+         let series="";
+         for(let i=0;i<n;i++){
+          let term=a +(i*d);
+          series += term + ",";
+         }
+         ResultDiv.innerHTML="Arithmetic Progression:" +series;
+        }
+    function calculateAP(){
+      let firstTerm = parseInt(document.getElementById("firstTerm").value);
+      let commonDiff = parseInt(document.getElementById("commonDiff").value);
+      let numTerms = parseInt(document.getElementById("numTerms").value);
+    
+    if (isNaN(firstTerm) || isNaN(commonDiff) || isNaN(numTerms)) {
+      document.getElementById("result").textContent = "Please enter valid numbers";
+      return;
+    }
+    
+    if (numTerms <= 0) {
+      document.getElementById("result").textContent = "Please enter a positive number of terms";
+      return;
+    }
+    
+    let sum = (numTerms / 2) * (2 * firstTerm + (numTerms - 1) * commonDiff);
+    document.getElementById("result").textContent = "The sum of AP Series: " + sum;
+  }
+
+</script>  
+</div>

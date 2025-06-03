@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mean">
+        <pre>
+            <h1>Calculate Mean of Frequency Distribution</h1>
+            <label for="classInterval">Class Interval:</label>
+            <input type="text" id="classInterval" placeholder="Enter class intervals (comma separated, e.g. 10-20, 20-30)">
+            <br>
+            <label for="frequency">Frequency:</label>
+            <input type="text" id="frequency" placeholder="Enter frequencies (comma separated)">
+            <br>
+            <button onclick="calculateMean()">Calculate Mean</button>
+            <p id="result"></p>
+            
+            <script>
+              function calculateMean() {
+                let classIntervals = document.getElementById("classInterval").value.split(",");
+                let frequencies = document.getElementById("frequency").value.split(",").map(Number);
+                let sum = 0;
+                let totalFrequency = 0;
+                for (let i = 0; i < classIntervals.length; i++) {
+                  let interval = classIntervals[i].split("-");
+                  let lowerBound = Number(interval[0]);
+                  let upperBound = Number(interval[1]);
+                  let midPoint = (lowerBound + upperBound) / 2;
+                  sum += midPoint * frequencies[i];
+                  totalFrequency += frequencies[i];
+                }
+                let mean = sum / totalFrequency;
+                document.getElementById("result").textContent = "Mean: " + mean;
+              }
+            </script>
+            
+           
+    </pre>
+    </div>
+    <div id="median">
+        <pre>
+            <h1> Calculate Median of frequency distribution</h1>
+            
+            <label for="classIntervalMedian">Class Interval:</label>
+            <input type="text" id="classIntervalMedian" placeholder="Enter class intervals (comma separated, e.g. 10-20, 20-30)">
+            <br>
+            <label for="frequencyMedian">Frequency:</label>
+            <input type="text" id="frequencyMedian" placeholder="Enter frequencies (comma separated)">
+            <br>
+            <button onclick="calculateMedian()">Calculate Median</button>
+            <p id="resultMedian"></p>
+            
+            <script>
+              function calculateMedian() {
+                let classIntervals = document.getElementById("classIntervalMedian").value.split(",");
+                let frequencies = document.getElementById("frequencyMedian").value.split(",").map(Number);
+                let cumulativeFrequency = [];
+                let totalFrequency = 0;
+                for (let i = 0; i < frequencies.length; i++) {
+                  totalFrequency += frequencies[i];
+                  cumulativeFrequency.push(totalFrequency);
+                }
+                let medianIndex = Math.floor(totalFrequency / 2);
+                let medianClassIndex;
+                for (let i = 0; i < cumulativeFrequency.length; i++) {
+                  if (cumulativeFrequency[i] >= medianIndex) {
+                    medianClassIndex = i;
+                    break;
+                  }
+                }
+                let interval = classIntervals[medianClassIndex].split("-");
+                let lowerLimit = Number(interval[0]);
+                let frequency = frequencies[medianClassIndex];
+                let classSize = Number(interval[1]) - Number(interval[0]);
+                let cf = medianClassIndex > 0 ? cumulativeFrequency[medianClassIndex - 1] : 0;
+                let median = lowerLimit + ((medianIndex - cf) / frequency) * classSize;
+                document.getElementById("resultMedian").textContent = "Median: " + median;
+              }
+            </script>           
+        </pre>
+    </div>
+    <div id="mode">
+        <pre>
+            <h1>Calculate Mode of Frequency Distribution</h1>
+            <label for="classIntervalMode">Class Interval:</label>
+            <input type="text" id="classIntervalMode" placeholder="Enter class intervals (comma separated, e.g. 10-20, 20-30)">
+            <br>
+            <label for="frequencyMode">Frequency:</label>
+            <input type="text" id="frequencyMode" placeholder="Enter frequencies (comma separated)">
+            <br>
+            <button onclick="calculateMode()">Calculate Mode</button>
+            <p id="resultMode"></p>
+            <script>
+                function calculateMode() {
+                    let classIntervals = document.getElementById("classIntervalMode").value.split(",");
+                    let frequencies = document.getElementById("frequencyMode").value.split(",").map(Number);
+                    let maxFrequency = Math.max(...frequencies);
+                    let modeClassIndex;
+                    for (let i = 0; i < frequencies.length; i++) {
+                        if (frequencies[i] === maxFrequency) {
+                        modeClassIndex = i;
+                        break;
+                    }
+                }
+                let interval = classIntervals[modeClassIndex].split("-");
+                let lowerLimit = Number(interval[0]);
+                let upperLimit = Number(interval[1]);
+                let mode = (lowerLimit + upperLimit) / 2;
+                document.getElementById("resultMode").textContent = "Mode: " + mode;
+            }
+        </script>
+    </pre>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN WAVE MATH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="line">
+        <pre>
+          <h1>Section Formula Calculator</h1>
+          <label for="x1">X1:</label>
+          <input type="number" id="x1" placeholder="Enter x1 value"><br>
+
+          <label for="y1">Y1:</label>
+          <input type="number" id="y1" placeholder="Enter y1 value"><br>
+
+          <label for="x2">X2:</label>
+          <input type="number" id="x2" placeholder="Enter x2 value"><br>
+
+          <label for="y2">Y2:</label>
+          <input type="number" id="y2" placeholder="Enter y2 value"><br>
+
+          <label for="m">Ratio (m:n):</label>
+          <input type="number" id="m" placeholder="Enter m value">
+
+          <input type="number" id="n" placeholder="Enter n value"><br>
+
+          <button onclick="calculateSection()">Calculate</button>
+          <p id="sectionResult"></p>
+          <script>
+            function calculateSection() {
+              let x1 = parseFloat(document.getElementById("x1").value);
+              let y1 = parseFloat(document.getElementById("y1").value);
+              let x2 = parseFloat(document.getElementById("x2").value);
+              let y2 = parseFloat(document.getElementById("y2").value);
+              let m = parseFloat(document.getElementById("m").value);
+              let n = parseFloat(document.getElementById("n").value);
+              let x = ((m * x2 + n * x1) / (m + n)).toFixed(4);
+              let y = ((m * y2 + n * y1) / (m + n)).toFixed(4);
+              document.getElementById("sectionResult").innerHTML = "Section Formula: (" + x + ", " + y + ")";
+            }
+          </script>
+        </pre>
+      </div>
+      <div id="section">
+        <pre>
+          <h1>Distance Formula Calculator</h1>
+          <p>Enter coordinates for point 1:</p>
+          <label for="x3">X:</label>
+          <input type="number" id="x3" name="x3"><br>
+
+          <label for="y3">Y:</label>
+          <input type="number" id="y3" name="y3"><br><br>
+          <p>Enter coordinates for point 2:</p>
+          <label for="x4">X:</label>
+          <input type="number" id="x4" name="x4"><br>
+
+          <label for="y4">Y:</label>
+          <input type="number" id="y4" name="y4"><br><br>
+          <button onclick="calculateDistance()">Calculate Distance</button>
+          <p id="distanceResult"></p>
+          <script>
+            function calculateDistance() {
+              let x1 = parseFloat(document.getElementById("x3").value);
+              let y1 = parseFloat(document.getElementById("y3").value);
+              let x2 = parseFloat(document.getElementById("x4").value);
+              let y2 = parseFloat(document.getElementById("y4").value);
+              if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2)) {
+                document.getElementById("distanceResult").innerHTML = "Error: Please enter numeric values.";
+                return;
+              }
+              if (x1 === "" || y1 === "" || x2 === "" || y2 === "") {
+                document.getElementById("distanceResult").innerHTML = "Error: Please enter values in all fields.";
+                return;
+              }
+              let distance = (Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2))).toFixed(4);
+              document.getElementById("distanceResult").innerHTML = "Distance: " + distance;
+            }
+          </script>
+        </pre>
+      </div>
+      <div id="centroid">
+        <pre>
+       <h1>Centroid Calculator</h1>
+    <label for="x1">x1:</label>
+    <input type="number" id="x1" name="x1"><br><br>
+
+    <label for="y1">y1:</label>
+    <input type="number" id="y1" name="y1"><br><br>
+
+    <label for="x2">x2:</label>
+    <input type="number" id="x2" name="x2"><br><br>
+
+    <label for="y2">y2:</label>
+    <input type="number" id="y2" name="y2"><br><br>
+
+    <label for="x3">x3:</label>
+    <input type="number" id="x3" name="x3"><br><br>
+
+    <label for="y3">y3:</label>
+    <input type="number" id="y3" name="y3"><br><br>
+
+    <button id="calculate-btn">Calculate Centroid</button>
+    <p id="resultCentroid"></p>
+        </pre>
+      </div>
+      <script>
+    // Get the input fields and button
+    const x1Input = document.getElementById('x1');
+    const y1Input = document.getElementById('y1');
+    const x2Input = document.getElementById('x2');
+    const y2Input = document.getElementById('y2');
+    const x3Input = document.getElementById('x3');
+    const y3Input = document.getElementById('y3');
+    const calculateBtn = document.getElementById('calculate-btn');
+    const resultPara = document.getElementById('result');
+
+    // Add event listener to the button
+    calculateBtn.addEventListener('click', calculateCentroid);
+
+    // Function to calculate the centroid
+    function calculateCentroid() {
+      // Get the input values
+      const x1 = parseFloat(x1Input.value);
+      const y1 = parseFloat(y1Input.value);
+      const x2 = parseFloat(x2Input.value);
+      const y2 = parseFloat(y2Input.value);
+      const x3 = parseFloat(x3Input.value);
+      const y3 = parseFloat(y3Input.value);
+
+      // Calculate the centroid
+      const centroidX = ((x1 + x2 + x3) / 3).toFixed(2);
+      const centroidY = ((y1 + y2 + y3) / 3).toFixed(2);
+
+      // Display the result
+      resultPara.textContent = `The centroid is (${centroidX}, ${centroidY})`;
+    }
+  </script>
+
+        
+            
+</body>
+</html>
